@@ -12,7 +12,8 @@ const Container = styled.div`
   border-top: 1px solid rgba(119, 119, 114, .3);
 `
 
-const Pagination = ({ length, total, setOffset }) => {
+const Pagination = ({ length, total, setOffset, offset }) => {
+
   return (  
     <Container>
       <span style={{ width: "100%", textAlign: "center", fontSize: 14 }}>

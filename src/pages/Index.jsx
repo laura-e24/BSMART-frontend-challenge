@@ -22,14 +22,22 @@ const Index = () => {
   const [offset, setOffset] = useState(0)
   const [total, setTotal] = useState(0)
 
+  const fetchData = async (offset) => {
+    const { data: { data } } = await axios(`https://gateway.marvel.com/v1/public/characters?apikey=${process.env.REACT_APP_API_KEY}&limit=20&offset=${offset}`)
+    return data;
+  }
   useEffect(() => {
-    const fetchData = async () => {
-      const response = await axios(`https://gateway.marvel.com/v1/public/characters?apikey=${process.env.REACT_APP_API_KEY}&limit=20&offset=${offset}`)
-      setCharacters(response.data.data.results)
-      setTotal(response.data.data.total)
+    const fetch = async () => {
+      const result = await fetchData(offset)
+      console.log(offset)
+
+      console.log(result)
+      setCharacters(character => character.concat(result.results))
+      setTotal(result.total)
     }
-    fetchData()
+   fetch()
   }, [offset])
+console.log(characters)
 
   return ( 
     <Layout>
@@ -55,7 +63,7 @@ const Index = () => {
           )
         })}
       </CardsContainer>
-      <Pagination setOffset={setOffset} total={total} length={characters.length} />
+      <Pagination offset={offset} setOffset={setOffset} total={total} length={characters.length} />
     </Layout>
   );
 }
