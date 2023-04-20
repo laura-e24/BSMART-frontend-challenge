@@ -9,8 +9,8 @@ const Layout = ({ children }) => {
     </style>
       <main>
       <NavBar/>
-        <div style={{ paddingTop: 100, paddingBottom: 100}}>
-          <div style={{maxWidth: 1024, width:"100%", margin:"auto"}}>
+        <div style={{ height: "100%"}}>
+          <div style={{maxWidth: 1024, width:"100%", margin:"auto", height: "100%", padding: "32px 0"}}>
             {children}
           </div>
         </div>

@@ -14,13 +14,13 @@
 html,
 body {
   max-width: 100vw;
+  height: 100%;
 }
 
 body {
   margin: 0;
   overflow: hidden;
   background-color: #292929;
-  height: 100vh;
 }
 
 main {
@@ -36,6 +36,43 @@ p {
 
 h3 {
   font-weight: 700;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  font-weight: 300;
+}
+
+li:not(:last-child) {
+  margin-bottom: 8px;
+}
+
+ul {
+  list-style: none;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #202020; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #bebebe; 
+  border-radius: 999px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
 }
 
 .marvel-red {

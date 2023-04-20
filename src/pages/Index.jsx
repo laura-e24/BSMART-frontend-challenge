@@ -6,11 +6,11 @@ import Layout from "../components/Layout";
 import { Link } from 'react-router-dom';
 import { useEffect, useState } from "react";
 import axios from "axios";
+import Pagination from "../components/Pagination";
 
 const CharImg = styled.img`
   border-bottom: 5px solid #e62429;
   width: 100%;
-  /* max-height: 400px; */
   &:hover {
     filter: grayscale(50%);
     transition: filter 0.50s;
@@ -19,14 +19,17 @@ const CharImg = styled.img`
 
 const Index = () => {
   const [characters, setCharacters] = useState([])
+  const [offset, setOffset] = useState(0)
+  const [total, setTotal] = useState(0)
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await axios(`https://gateway.marvel.com/v1/public/characters?apikey=${process.env.REACT_APP_API_KEY}&limit=100`)
+      const response = await axios(`https://gateway.marvel.com/v1/public/characters?apikey=${process.env.REACT_APP_API_KEY}&limit=20&offset=${offset}`)
       setCharacters(response.data.data.results)
+      setTotal(response.data.data.total)
     }
     fetchData()
-  }, [])
+  }, [offset])
 
   return ( 
     <Layout>
@@ -52,6 +55,7 @@ const Index = () => {
           )
         })}
       </CardsContainer>
+      <Pagination setOffset={setOffset} total={total} length={characters.length} />
     </Layout>
   );
 }
