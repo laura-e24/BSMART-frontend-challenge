@@ -45,13 +45,14 @@ const ListItem = styled.li`
 `
 
 const Character = () => {
+  const apiKey = process.env.REACT_APP_API_KEY || "03b0d8ae81fc8954b6f064a264896336";
   const [character, setCharacter] = useState([])
   const params = useParams();
   const { characterId } = params;
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await axios(`https://gateway.marvel.com/v1/public/characters/${characterId}?apikey=${process.env.REACT_APP_API_KEY}&limit=100`)
+      const response = await axios(`https://gateway.marvel.com/v1/public/characters/${characterId}?apikey=${apiKey}&limit=100`)
       setCharacter(response.data.data.results[0])
     }
     fetchData()
