@@ -12,6 +12,7 @@ ___
 
 Luego de clonar el repositorio y abrir el proyecto en un editor de código, abrir la consola y ejecutar el comando ```npm install``` para instalar todas las dependencias necesarias. Para comenzar a correr la aplicación, ejecutar el comando ```npm start```.
 
+_NOTA: Para utilizar la API de Marvel se necesita una apiKey, la cual la podemos obtener gratuitamente al registrarse en su página. Esta aplicación ya hace uso de una, pero si se desea cambiar la misma por otra apiKey, es muy simple: sólo debemos crear un archivo ```.env``` en la carpeta raíz, y allí colocar ```REACT_APP_API_KEY=TUAPIKEY```; de esta manera, la app tomará esta variable como apikey en lugar de la que yo coloqué originalmente._
 ___
 
 ### Evaluación
