@@ -61,7 +61,10 @@ const Character = () => {
     <Layout>
       <CardContainer>
         <BackgroundImg background={`${character.thumbnail?.path}.${character.thumbnail?.extension}`}/>
-        <CharImg src={`${character.thumbnail?.path}.${character.thumbnail?.extension}`}/>
+        <CharImg 
+          alt={`${character.name}-image`} 
+          src={`${character.thumbnail?.path}.${character.thumbnail?.extension}`}
+        />
         <TextContainer>
           <div style={{padding: 16, overflowY: "auto" }}>
             <h1>{character.name}</h1>

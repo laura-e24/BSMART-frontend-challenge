@@ -29,15 +29,11 @@ const Index = () => {
   useEffect(() => {
     const fetch = async () => {
       const result = await fetchData(offset)
-      console.log(offset)
-
-      console.log(result)
       setCharacters(character => character.concat(result.results))
       setTotal(result.total)
     }
    fetch()
   }, [offset])
-console.log(characters)
 
   return ( 
     <Layout>
@@ -46,7 +42,10 @@ console.log(characters)
           return (
             <CharacterCard key={i}>
               <Link to={`/characters/${c.id}`} style={{ textDecoration: 'none' }}>
-                <CharImg src={`${c.thumbnail.path}.${c.thumbnail.extension}`} />
+                <CharImg 
+                  src={`${c.thumbnail.path}.${c.thumbnail.extension}`} 
+                  alt={`${c.name}-image`}
+                />
               </Link>
               <div style={{padding:16}}>
                 <span className="block" style={{ marginBottom:16 }}>

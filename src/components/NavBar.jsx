@@ -29,9 +29,9 @@ const NavBar = () => {
   return (  
     <Navigation>
       <ImgContainer>
-      <Link to="/" style={{ textDecoration: 'none', marginTop:"auto", marginBottom:"auto", textAlign:"center" }}>
-        <img src="/marvel.svg" />
-      </Link>
+        <Link to="/" style={{ textDecoration: 'none', marginTop:"auto", marginBottom:"auto", textAlign:"center" }}>
+          <img alt="marvel-logo" src="/marvel.svg" />
+        </Link>
       </ImgContainer>
         <Link to="/" style={{ textDecoration: 'none', marginTop:"auto", marginBottom:"auto", textAlign:"center" }}>
           <Item>
