@@ -26,7 +26,7 @@ const Index = () => {
   const [total, setTotal] = useState(0)
 
   const fetchData = async (offset) => {
-    const { data: { data } } = await axios(`https://gateway.marvel.com/v1/public/characters?ts=thesoer&apikey=${apiKey}&hash={hash}&limit=20&offset=${offset}`)
+    const { data: { data } } = await axios(`https://gateway.marvel.com/v1/public/characters?ts=thesoer&apikey=${apiKey}&hash=${hash}&limit=20&offset=${offset}`)
     return data;
   }
 
