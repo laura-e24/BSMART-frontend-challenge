@@ -53,7 +53,7 @@ const Character = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await axios(`https://gateway.marvel.com/v1/public/characters/${characterId}?ts=1&apikey=${apiKey}&hash=${hash}&limit=100`)
+      const response = await axios(`https://gateway.marvel.com/v1/public/characters/${characterId}?ts=thesoer&apikey=${apiKey}&hash=${hash}&limit=100`)
       setCharacter(response.data.data.results[0])
     }
     fetchData()
