@@ -20,12 +20,13 @@ const CharImg = styled.img`
 const Index = () => {
 
   const apiKey = process.env.REACT_APP_API_KEY || "03b0d8ae81fc8954b6f064a264896336";
+  const hash = process.env.REACT_APP_API_HASH || "96a71187872795b68607de946ce382b8";
   const [characters, setCharacters] = useState([])
   const [offset, setOffset] = useState(0)
   const [total, setTotal] = useState(0)
 
   const fetchData = async (offset) => {
-    const { data: { data } } = await axios(`https://gateway.marvel.com/v1/public/characters?apikey=${apiKey}&limit=20&offset=${offset}`)
+    const { data: { data } } = await axios(`https://gateway.marvel.com/v1/public/characters?ts=1&apikey=${apiKey}&hash={hash}&limit=20&offset=${offset}`)
     return data;
   }
 
