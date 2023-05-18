@@ -20,7 +20,7 @@ const CharImg = styled.img`
 const Index = () => {
 
   const apiKey = process.env.REACT_APP_API_KEY || "03b0d8ae81fc8954b6f064a264896336";
-  const hash = process.env.REACT_APP_API_HASH || "96a71187872795b68607de946ce382b8";
+  const hash = process.env.REACT_APP_API_HASH || "f151c9adc6ca5641862796ec0b06d500";
   const [characters, setCharacters] = useState([])
   const [offset, setOffset] = useState(0)
   const [total, setTotal] = useState(0)
